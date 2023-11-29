@@ -10,9 +10,13 @@ class encoder(nn.Module):
 
     def forward(self, x):
         # return the hidden state
-        lengths = [len(data) for data in x]
-        padded_x = nn.utils.rnn.pad_sequence(x)
-        packed_x = nn.utils.rnn.pack_padded_sequence(padded_x, lengths)
+        padded_x, lengths = x
+        packed_x = nn.utils.rnn.pack_padded_sequence(
+            padded_x, lengths, enforce_sorted=False
+        )
+        # import pdb
+
+        # pdb.set_trace()
         _, (h_n, c_n) = self.encoder(packed_x)
         return h_n
 
@@ -27,6 +31,7 @@ class decoder(nn.Module):
         self.unrolled_steps = 64
 
     def forward(self, final_hidden_state):
+        final_hidden_state = torch.squeeze(final_hidden_state, axis=0)
         # return a sequence of probabilities
         replicates = [final_hidden_state.clone() for _ in range(0, self.unrolled_steps)]
         replicates = torch.stack(replicates)

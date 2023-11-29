@@ -1,10 +1,13 @@
+import pdb
 import lightning as L
 import torch
+import torch.nn as nn
 
 import dataset
 
 from model import encoder, decoder
 from torch.utils.data import DataLoader
+from lightning.pytorch.callbacks.early_stopping import EarlyStopping
 
 
 class DDRSA(L.LightningModule):
@@ -18,22 +21,102 @@ class DDRSA(L.LightningModule):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)
         return optimizer
 
-    def training_step(self, batch, batch_idx):
-        pass
+    def DRSA_loss(self, probs, ys):
+        # pdb.set_trace()
+        loss = torch.tensor(0.0)
+        trade_off_factor = 0.75
+        batch_size = len(ys)
+        for i in range(0, batch_size):
+            y = ys[i]
+            prob_seq = probs[:, i, 0]  # batch at second index
+
+            # find the index of one
+            one_idx = []
+            for i in range(0, len(y)):
+                if y[i] == 1.0:
+                    one_idx.append(i)
+
+            if len(one_idx) == 0:
+                # the failure is censored
+                log_one_minus_h = torch.log(1.0 - prob_seq)
+                log_l_c = torch.sum(log_one_minus_h)
+                loss = loss + (trade_off_factor - 1.0) * log_l_c
+            elif len(one_idx) == 1:
+                # the failure is uncensored
+                l = one_idx[0]
+                log_one_minus_h = torch.log(1.0 - prob_seq)
+                log_l_z = torch.sum(log_one_minus_h[0:l]) + torch.log(prob_seq[l])
+                log_l_u = torch.log(1 - torch.prod(1 - prob_seq))
+                loss = loss + (
+                    -1 * trade_off_factor * log_l_z + (trade_off_factor - 1) * log_l_u
+                )
+            else:
+                assert False
+
+        # return the averaged loss over the batch
+        # pdb.set_trace()
+        return loss / batch_size
+
+    def training_step(self, batch):
+        # print("training step is called")
+        xs, lengths, ys = batch
+
+        out = self.encoder((xs, lengths))
+        probs = self.decoder(out)  # shape should be (512, 64)
+
+        assert probs.shape[1] == len(ys)
+
+        loss = self.DRSA_loss(probs, ys)
+        self.log("train_loss", loss)
+        return loss
+
+    def validation_step(self, batch):
+        # print("validation step is called")
+        xs, lengths, ys = batch
+
+        out = self.encoder((xs, lengths))
+        probs = self.decoder(out)  # shape should be (512, 64)
+
+        # pdb.set_trace()
+        # need second dim of probs since batch_first=False
+        assert probs.shape[1] == len(ys)
+
+        loss = self.DRSA_loss(probs, ys)
+        self.log("val_loss", loss)
+        return loss
 
 
 def train(model, train_loader, valid_loader):
-    trainer = L.Trainer()
+    trainer = L.Trainer(
+        limit_train_batches=100,
+        callbacks=[EarlyStopping(monitor="val_loss", patience=10)],
+    )
+    # the train should automatically use gpu for training when available
     trainer.fit(model, train_loader, valid_loader)
 
 
-if __name__ == "__main":
+def pad_sequence(data):
+    # pdb.set_trace()
+    xs, lengths, ys = zip(*data)
+    xs = nn.utils.rnn.pad_sequence(xs)
+    return xs, lengths, ys
+
+
+if __name__ == "__main__":
+    print("#### start process the data ####")
     train_dataset, valid_dataset, test_dataset = dataset.process_data(
         "../AMLWorkshop/Data/features_15h.csv"
     )
-    train_loader = DataLoader(train_dataset, batch_size=512, shuffle=True)
-    valid_loader = DataLoader(valid_dataset, batch_size=512, shuffle=True)
+    train_loader = DataLoader(
+        train_dataset, batch_size=512, shuffle=True, collate_fn=pad_sequence
+    )
+    valid_loader = DataLoader(valid_dataset, batch_size=512, collate_fn=pad_sequence)
+    print("#### finish process the data ####")
 
+    print("#### start build the model ####")
     model = DDRSA(feature_size=16, learning_rate=0.01)
+    print("#### finish build the model ####")
 
+    print("#### start training ####")
     train(model, train_loader, valid_loader)
+    print("#### finish training ####")

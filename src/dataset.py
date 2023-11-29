@@ -14,6 +14,7 @@ class MicrosoftTrainDataset(Dataset):
     def __init__(self, all_seqs):
         self.all_seqs = copy.deepcopy(all_seqs)
         self.processed_data, self.processed_label = self.preprocess(self.all_seqs)
+        # pdb.set_trace()
 
     def preprocess(self, all_seqs):
         # for each sequence, correct all possible training data and labels
@@ -26,14 +27,14 @@ class MicrosoftTrainDataset(Dataset):
             length = len(one_seq)
             for i in range(0, length - 1):
                 lower_bound = max(0, i - look_back_steps)
-                upper_bound = min(length, i + unrolled_steps)
+                upper_bound = min(length, i + 1 + unrolled_steps)
 
                 one_seq_array = np.array(one_seq)
                 x = one_seq_array[lower_bound : i + 1][:, :-1]
                 y = one_seq_array[i + 1 : upper_bound][:, -1]
 
-                x = torch.from_numpy(x)
-                y = torch.from_numpy(y)
+                x = torch.from_numpy(x).float()
+                y = torch.from_numpy(y).float()
                 features.append(x)
                 labels.append(y)
 
@@ -44,8 +45,10 @@ class MicrosoftTrainDataset(Dataset):
 
     def __getitem__(self, idx):
         x = self.processed_data[idx]
+        length = len(x)
         y = self.processed_label[idx]
-        return x, y
+        # pdb.set_trace()
+        return x, length, y
 
 
 class MicrosoftTestDataset(Dataset):
@@ -95,7 +98,7 @@ def process_data(csv_file, split=[0.5, 0.2, 0.3]):
     train_sz, valid_sz = math.floor(sizes[0]), math.floor(sizes[1])
     train_dataset = MicrosoftTrainDataset(all_seqs[0:train_sz])
     valid_dataset = MicrosoftTrainDataset(all_seqs[train_sz : train_sz + valid_sz])
-    test_dataset = MicrosoftTestDataset(all_seqs[train_sz + valid_sz:])
+    test_dataset = MicrosoftTestDataset(all_seqs[train_sz + valid_sz :])
 
     return train_dataset, valid_dataset, test_dataset
 
