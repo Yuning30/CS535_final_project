@@ -8,6 +8,7 @@ import dataset
 from model import encoder, decoder
 from torch.utils.data import DataLoader
 from lightning.pytorch.callbacks.early_stopping import EarlyStopping
+from lightning.pytorch.callbacks import ModelCheckpoint
 
 import torch.multiprocessing
 
@@ -20,6 +21,7 @@ class DDRSA(L.LightningModule):
         self.encoder = encoder(feature_size)
         self.decoder = decoder()
         self.learning_rate = learning_rate
+        self.training_step_outputs = []
 
     def configure_optimizers(self):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)
@@ -51,9 +53,9 @@ class DDRSA(L.LightningModule):
             elif len(one_idx) == 1:
                 # the failure is uncensored
                 if p == False:
-                    # pass
-                    print(prob_seq)
-                    print(y)
+                    pass
+                    # print(prob_seq)
+                    # print(y)
                 l = one_idx[0]
                 log_one_minus_h = torch.log(1.0 - prob_seq)
                 log_l_z = torch.sum(log_one_minus_h[0:l]) + torch.log(prob_seq[l])
@@ -77,15 +79,19 @@ class DDRSA(L.LightningModule):
         # print(f"xs shape {xs.shape}")
 
         out = self.encoder((xs, lengths))
-        print("hidden state ", out)
+        # print("hidden state ", out)
         # pdb.set_trace()
         probs = self.decoder(out)  # shape should be (512, 64)
 
         assert probs.shape[1] == len(ys)
 
         loss = self.DRSA_loss(probs, ys, False)
-        self.log("train_loss", loss)
+        self.log("train_loss", loss, on_epoch=True)
+        self.training_step_outputs.append(loss)
         return loss
+
+    def on_train_epoch_end(self):
+        self.training_step_outputs.clear() # free memory
 
     def validation_step(self, batch):
         # print("validation step is called")
@@ -99,17 +105,42 @@ class DDRSA(L.LightningModule):
         assert probs.shape[1] == len(ys)
 
         loss = self.DRSA_loss(probs, ys, p=False)
-        self.log("val_loss", loss)
+        self.log("val_loss", loss, on_epoch=True)
         return loss
 
+    def compute_h_j(self, L_max, j, features):
+        self.encoder.eval()
+        self.decoder.eval()
+
+        with torch.no_grad():
+            _, (final_hidden_state, _) = self.encoder.encoder(features)
+            final_hidden_state = torch.squeeze(final_hidden_state, dim=0)
+            replicates = [final_hidden_state.clone() for _ in  range(0, L_max - j)]
+            replicates = torch.stack(replicates)
+            h_0 = final_hidden_state.clone()
+            h_0 = torch.unsqueeze(h_0, 0)
+            c_0 = torch.zeros_like(h_0)
+
+            out, (_, _) = self.decoder.decoder(replicates, (h_0, c_0))
+            out = self.decoder.dense_layer(out)
+            probs = self.decoder.sigmoid(out)
+            probs = torch.squeeze(probs, dim=1)
+            return probs.numpy()
 
 def train(model, train_loader, valid_loader):
+    checkpoint_callback = ModelCheckpoint(
+        monitor='train_loss',
+        save_top_k=2,
+        verbose=True,
+        filename='{epoch}-{val_loss:.4f}-{other_metric:.2f}'
+    )
     trainer = L.Trainer(
-        limit_train_batches=2,
+        limit_train_batches=100,
         # callbacks=[EarlyStopping(monitor="val_loss", patience=10)],
+        callbacks=[checkpoint_callback],
         accelerator="cpu",
         log_every_n_steps=1,
-        overfit_batches=1,
+        # overfit_batches=1,
         max_epochs=5000,
     )
     # the train should automatically use gpu for training when available
@@ -133,14 +164,14 @@ if __name__ == "__main__":
         batch_size=512,
         shuffle=True,
         collate_fn=pad_sequence,
-        num_workers=2,
+        # num_workers=2,
     )
     # train_loader = DataLoader(
-        # dataset.oneDataSet(), batch_size=2, collate_fn=pad_sequence
+    #     dataset.oneDataSet(), batch_size=2, collate_fn=pad_sequence
     # )
-    pdb.set_trace()
+    # pdb.set_trace()
     valid_loader = DataLoader(
-        valid_dataset, batch_size=16, collate_fn=pad_sequence, num_workers=2
+        valid_dataset, batch_size=512, collate_fn=pad_sequence
     )
     print("#### finish process the data ####")
 
