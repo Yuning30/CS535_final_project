@@ -10,7 +10,9 @@ from torch.utils.data import DataLoader
 from lightning.pytorch.callbacks.early_stopping import EarlyStopping
 
 import torch.multiprocessing
-torch.multiprocessing.set_sharing_strategy('file_system')
+
+torch.multiprocessing.set_sharing_strategy("file_system")
+
 
 class DDRSA(L.LightningModule):
     def __init__(self, feature_size, learning_rate):
@@ -23,9 +25,9 @@ class DDRSA(L.LightningModule):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)
         return optimizer
 
-    def DRSA_loss(self, probs, ys,p=True):
+    def DRSA_loss(self, probs, ys, p=True):
         # pdb.set_trace()
-        loss = torch.tensor(0.0)
+        loss = torch.tensor(0.0, requires_grad=True)
         trade_off_factor = 0.75
         batch_size = len(ys)
         # if p == False:
@@ -44,17 +46,18 @@ class DDRSA(L.LightningModule):
                 # the failure is censored
                 log_one_minus_h = torch.log(1.0 - prob_seq)
                 log_l_c = torch.sum(log_one_minus_h)
-                # loss = loss + (trade_off_factor - 1.0) * log_l_c
+                loss = loss + (trade_off_factor - 1.0) * log_l_c
                 self.log("log_l_c", log_l_c)
             elif len(one_idx) == 1:
                 # the failure is uncensored
                 if p == False:
+                    # pass
                     print(prob_seq)
                     print(y)
                 l = one_idx[0]
                 log_one_minus_h = torch.log(1.0 - prob_seq)
                 log_l_z = torch.sum(log_one_minus_h[0:l]) + torch.log(prob_seq[l])
-                log_l_u = torch.log(1 - torch.prod(1 - prob_seq))
+                log_l_u = torch.log(1 - torch.prod(1 - prob_seq).double()).float()
                 loss = loss + (
                     -1 * trade_off_factor * log_l_z + (trade_off_factor - 1) * log_l_u
                 )
@@ -65,8 +68,8 @@ class DDRSA(L.LightningModule):
 
         # return the averaged loss over the batch
         # pdb.set_trace()
-        # return loss / batch_size
-        return loss
+        return loss / batch_size
+        # return loss
 
     def training_step(self, batch):
         # print("training step is called")
@@ -74,6 +77,8 @@ class DDRSA(L.LightningModule):
         # print(f"xs shape {xs.shape}")
 
         out = self.encoder((xs, lengths))
+        print("hidden state ", out)
+        # pdb.set_trace()
         probs = self.decoder(out)  # shape should be (512, 64)
 
         assert probs.shape[1] == len(ys)
@@ -100,11 +105,12 @@ class DDRSA(L.LightningModule):
 
 def train(model, train_loader, valid_loader):
     trainer = L.Trainer(
-        limit_train_batches=100,
+        limit_train_batches=2,
         # callbacks=[EarlyStopping(monitor="val_loss", patience=10)],
-        accelerator='cpu',
+        accelerator="cpu",
         log_every_n_steps=1,
-        # overfit_batches=0.03
+        overfit_batches=1,
+        max_epochs=5000,
     )
     # the train should automatically use gpu for training when available
     trainer.fit(model, train_loader)
@@ -123,9 +129,19 @@ if __name__ == "__main__":
         "../AMLWorkshop/Data/features_15h.csv"
     )
     train_loader = DataLoader(
-        train_dataset, batch_size=512, shuffle=True, collate_fn=pad_sequence, num_workers=2
+        train_dataset,
+        batch_size=512,
+        shuffle=True,
+        collate_fn=pad_sequence,
+        num_workers=2,
     )
-    valid_loader = DataLoader(valid_dataset, batch_size=512, collate_fn=pad_sequence, num_workers=2)
+    # train_loader = DataLoader(
+        # dataset.oneDataSet(), batch_size=2, collate_fn=pad_sequence
+    # )
+    pdb.set_trace()
+    valid_loader = DataLoader(
+        valid_dataset, batch_size=16, collate_fn=pad_sequence, num_workers=2
+    )
     print("#### finish process the data ####")
 
     print("#### start build the model ####")
