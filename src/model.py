@@ -33,10 +33,12 @@ class decoder(nn.Module):
     def forward(self, final_hidden_state):
         final_hidden_state = torch.squeeze(final_hidden_state, axis=0)
         # return a sequence of probabilities
-        replicates = [final_hidden_state.clone() for _ in range(0, self.unrolled_steps)]
+        replicates = [final_hidden_state.clone().detach() for _ in range(0, self.unrolled_steps)]
         replicates = torch.stack(replicates)
 
         h_0 = final_hidden_state.clone()
+        # import pdb
+        # pdb.set_utrace()
         h_0 = torch.unsqueeze(h_0, 0)
         c_0 = torch.zeros_like(h_0)
 

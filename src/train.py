@@ -9,6 +9,8 @@ from model import encoder, decoder
 from torch.utils.data import DataLoader
 from lightning.pytorch.callbacks.early_stopping import EarlyStopping
 
+import torch.multiprocessing
+torch.multiprocessing.set_sharing_strategy('file_system')
 
 class DDRSA(L.LightningModule):
     def __init__(self, feature_size, learning_rate):
@@ -21,11 +23,13 @@ class DDRSA(L.LightningModule):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)
         return optimizer
 
-    def DRSA_loss(self, probs, ys):
+    def DRSA_loss(self, probs, ys,p=True):
         # pdb.set_trace()
         loss = torch.tensor(0.0)
         trade_off_factor = 0.75
         batch_size = len(ys)
+        # if p == False:
+        #     pdb.set_trace()
         for i in range(0, batch_size):
             y = ys[i]
             prob_seq = probs[:, i, 0]  # batch at second index
@@ -40,9 +44,13 @@ class DDRSA(L.LightningModule):
                 # the failure is censored
                 log_one_minus_h = torch.log(1.0 - prob_seq)
                 log_l_c = torch.sum(log_one_minus_h)
-                loss = loss + (trade_off_factor - 1.0) * log_l_c
+                # loss = loss + (trade_off_factor - 1.0) * log_l_c
+                self.log("log_l_c", log_l_c)
             elif len(one_idx) == 1:
                 # the failure is uncensored
+                if p == False:
+                    print(prob_seq)
+                    print(y)
                 l = one_idx[0]
                 log_one_minus_h = torch.log(1.0 - prob_seq)
                 log_l_z = torch.sum(log_one_minus_h[0:l]) + torch.log(prob_seq[l])
@@ -50,23 +58,27 @@ class DDRSA(L.LightningModule):
                 loss = loss + (
                     -1 * trade_off_factor * log_l_z + (trade_off_factor - 1) * log_l_u
                 )
+                self.log("log_l_z", log_l_z)
+                self.log("log_l_u", log_l_u)
             else:
                 assert False
 
         # return the averaged loss over the batch
         # pdb.set_trace()
-        return loss / batch_size
+        # return loss / batch_size
+        return loss
 
     def training_step(self, batch):
         # print("training step is called")
         xs, lengths, ys = batch
+        # print(f"xs shape {xs.shape}")
 
         out = self.encoder((xs, lengths))
         probs = self.decoder(out)  # shape should be (512, 64)
 
         assert probs.shape[1] == len(ys)
 
-        loss = self.DRSA_loss(probs, ys)
+        loss = self.DRSA_loss(probs, ys, False)
         self.log("train_loss", loss)
         return loss
 
@@ -81,7 +93,7 @@ class DDRSA(L.LightningModule):
         # need second dim of probs since batch_first=False
         assert probs.shape[1] == len(ys)
 
-        loss = self.DRSA_loss(probs, ys)
+        loss = self.DRSA_loss(probs, ys, p=False)
         self.log("val_loss", loss)
         return loss
 
@@ -89,10 +101,13 @@ class DDRSA(L.LightningModule):
 def train(model, train_loader, valid_loader):
     trainer = L.Trainer(
         limit_train_batches=100,
-        callbacks=[EarlyStopping(monitor="val_loss", patience=10)],
+        # callbacks=[EarlyStopping(monitor="val_loss", patience=10)],
+        accelerator='cpu',
+        log_every_n_steps=1,
+        # overfit_batches=0.03
     )
     # the train should automatically use gpu for training when available
-    trainer.fit(model, train_loader, valid_loader)
+    trainer.fit(model, train_loader)
 
 
 def pad_sequence(data):
@@ -108,9 +123,9 @@ if __name__ == "__main__":
         "../AMLWorkshop/Data/features_15h.csv"
     )
     train_loader = DataLoader(
-        train_dataset, batch_size=512, shuffle=True, collate_fn=pad_sequence
+        train_dataset, batch_size=512, shuffle=True, collate_fn=pad_sequence, num_workers=2
     )
-    valid_loader = DataLoader(valid_dataset, batch_size=512, collate_fn=pad_sequence)
+    valid_loader = DataLoader(valid_dataset, batch_size=512, collate_fn=pad_sequence, num_workers=2)
     print("#### finish process the data ####")
 
     print("#### start build the model ####")
