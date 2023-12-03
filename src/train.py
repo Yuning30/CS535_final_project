@@ -2,6 +2,7 @@ import pdb
 import lightning as L
 import torch
 import torch.nn as nn
+import argparse
 
 import dataset
 
@@ -14,6 +15,53 @@ import torch.multiprocessing
 
 torch.multiprocessing.set_sharing_strategy("file_system")
 
+class WBI(L.LightningModule):
+    def __init__(self, feature_size, learning_rate, hidden_size=16):
+        super(WBI, self).__init__()
+        self.encoder = encoder(feature_size, hidden_size)
+        self.dense = nn.Linear(hidden_size, 1)
+        self.loss_fn = nn.BCEWithLogitsLoss()
+        self.learning_rate = learning_rate
+        self.training_step_outputs = []
+
+        self.save_hyperparameters()
+
+    def configure_optimizers(self):
+        optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)
+        return optimizer
+
+    def forward(self, xs, lengths):
+        hidden_state = self.encoder((xs, lengths))
+        logits = self.dense(hidden_state)
+        logits = torch.squeeze(logits)
+        return logits
+
+    def training_step(self, batch):
+        # print("training step is called")
+        xs, lengths, ys = batch
+        # print(f"xs shape {xs.shape}")
+
+        logits = self(xs, lengths)  # shape shoule be (512,)
+
+        # pdb.set_trace()
+        loss = self.loss_fn(logits, torch.tensor(ys))
+        self.log("train_loss", loss, on_epoch=True)
+        self.training_step_outputs.append(loss)
+        return loss
+    
+    def validation_step(self, batch):
+        # print("training step is called")
+        xs, lengths, ys = batch
+        # print(f"xs shape {xs.shape}")
+
+        logits = self(xs, lengths)  # shape shoule be (512,)
+
+        loss = self.loss_fn(logits, torch.tensor(ys))
+        self.log("val_loss", loss, on_epoch=True)
+        return loss
+
+    def on_train_epoch_end(self):
+        self.training_step_outputs.clear() # free memory
 
 class DDRSA(L.LightningModule):
     def __init__(self, feature_size, learning_rate):
@@ -22,6 +70,8 @@ class DDRSA(L.LightningModule):
         self.decoder = decoder()
         self.learning_rate = learning_rate
         self.training_step_outputs = []
+
+        self.save_hyperparameters()
 
     def configure_optimizers(self):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.learning_rate)
@@ -129,22 +179,22 @@ class DDRSA(L.LightningModule):
 
 def train(model, train_loader, valid_loader):
     checkpoint_callback = ModelCheckpoint(
-        monitor='train_loss',
+        monitor='val_loss',
         save_top_k=2,
         verbose=True,
-        filename='{epoch}-{val_loss:.4f}-{other_metric:.2f}'
+        filename='{epoch}-{val_loss:.4f}'
     )
     trainer = L.Trainer(
         limit_train_batches=100,
-        # callbacks=[EarlyStopping(monitor="val_loss", patience=10)],
-        callbacks=[checkpoint_callback],
+        # callbacks=[],
+        callbacks=[checkpoint_callback, EarlyStopping(monitor="val_loss", patience=10)],
         accelerator="cpu",
         log_every_n_steps=1,
         # overfit_batches=1,
         max_epochs=5000,
     )
     # the train should automatically use gpu for training when available
-    trainer.fit(model, train_loader)
+    trainer.fit(model, train_loader, valid_loader)
 
 
 def pad_sequence(data):
@@ -155,10 +205,17 @@ def pad_sequence(data):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-m", "--model", action="store", default="ddrsa")
+    args = parser.parse_args()
     print("#### start process the data ####")
     train_dataset, valid_dataset, test_dataset = dataset.process_data(
-        "../AMLWorkshop/Data/features_15h.csv"
+        "../AMLWorkshop/Data/features_15h.csv", model=args.model
     )
+    import pickle
+    with open("testdataset.pkl", "wb") as f:
+        pickle.dump(test_dataset, f)
+
     train_loader = DataLoader(
         train_dataset,
         batch_size=512,
@@ -175,10 +232,21 @@ if __name__ == "__main__":
     )
     print("#### finish process the data ####")
 
-    print("#### start build the model ####")
-    model = DDRSA(feature_size=16, learning_rate=0.01)
-    print("#### finish build the model ####")
+    if args.model == "ddrsa":
+        print("#### start build the model ####")
+        model = DDRSA(feature_size=16, learning_rate=0.01)
+        print("#### finish build the model ####")
 
-    print("#### start training ####")
-    train(model, train_loader, valid_loader)
-    print("#### finish training ####")
+        print("#### start training ####")
+        train(model, train_loader, valid_loader)
+        print("#### finish training ####")
+    elif args.model == "wbi":
+        print("#### start build the model ####")
+        model = WBI(feature_size=16, learning_rate=0.001)
+        print("#### finish build the model ####")
+
+        print("#### start training ####")
+        train(model, train_loader, valid_loader)
+        print("#### finish training ####")
+    else:
+        assert False, f"Unrecognized model name {args.model}"

@@ -2,16 +2,18 @@ import inference
 import dataset
 import train
 import pdb
+import pickle
 
 if __name__ == "__main__":
-    model_path = "lightning_logs/version_69/checkpoints/epoch=1704-val_loss=0.0000-other_metric=0.00.ckpt"
+    model_path = "lightning_logs/version_0/checkpoints/epoch=4999-val_loss=0.0000-other_metric=0.00.ckpt"
     
     print("#### start process the data ####")
     train_dataset, valid_dataset, test_dataset = dataset.process_data(
         "../AMLWorkshop/Data/features_15h.csv"
     )
     print("#### finish process the data ####")
-    test_dataset = dataset.oneTestDataSet()
+    with open("testdataset.pkl", "rb") as f:
+        test_dataset = pickle.load(f)
 
     print("#### start loading the model ####")
     model = train.DDRSA.load_from_checkpoint(model_path, feature_size=16, learning_rate=0.01)

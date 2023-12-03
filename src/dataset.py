@@ -482,17 +482,74 @@ class MicrosoftTrainDataset(Dataset):
 
 
 class MicrosoftTestDataset(Dataset):
-    def __init__(self, all_seqs):
+    def __init__(self, all_seqs, min_feature, max_feature):
         self.all_seqs = copy.deepcopy(all_seqs)
+        self.processed_data = []
+        self.processed_label = []
+        for one_seq in all_seqs:
+            one_seq_array = np.array(one_seq)
+            x = one_seq_array[:, :-1]
+            y = one_seq_array[:, -1]
+
+            x = 2 * (x - min_feature) / (max_feature - min_feature) - 1
+
+            x = torch.from_numpy(x).float()
+            y = torch.from_numpy(y).float()
+            self.processed_data.append(x)
+            self.processed_label.append(y)
 
     def __len__(self):
-        return len(self.all_seqs)
+        return len(self.processed_data)
 
     def __getitem__(self, idx):
-        return self.all_seqs[idx]
+        return self.processed_data[idx], self.processed_label[idx]
 
+class MicrosoftTrainDataset_WBI(Dataset):
+    def __init__(self, all_seqs, min_feature, max_feature):
+        self.all_seqs = copy.deepcopy(all_seqs)
+        self.processed_data, self.processed_label = self.preprocess(
+            self.all_seqs, min_feature, max_feature
+        )
+        # pdb.set_trace()
 
-def process_data(csv_file, split=[0.5, 0.2, 0.3]):
+    def preprocess(self, all_seqs, min_feature, max_feature):
+        # for each sequence, correct all possible training data and labels
+        # Note: max look back is 128 steps, encoder is unrolled 64 steps
+        look_back_steps = 128
+        unrolled_steps = 8
+        features = []
+        labels = []
+        for one_seq in all_seqs:
+            length = len(one_seq)
+            for i in range(0, length - 1):
+                lower_bound = max(0, i - look_back_steps)
+                upper_bound = min(length, i + unrolled_steps)
+
+                one_seq_array = np.array(one_seq)
+                x = one_seq_array[lower_bound : i + 1][:, :-1]
+                y = np.sum(one_seq_array[i: upper_bound][:, -1])
+
+                # perform min-max transformation
+                x = 2 * (x - min_feature) / (max_feature - min_feature) - 1
+
+                x = torch.from_numpy(x).float()
+                y = torch.tensor(y).float()
+                features.append(x)
+                labels.append(y)
+
+        return features, labels
+
+    def __len__(self):
+        return len(self.processed_data)
+
+    def __getitem__(self, idx):
+        x = self.processed_data[idx]
+        length = len(x)
+        y = self.processed_label[idx]
+        # pdb.set_trace()
+        return x, length, y
+
+def process_data(csv_file, split=[0.5, 0.2, 0.3], model="ddrsa"):
     raw_data = pd.read_csv(csv_file)
 
     data_copy = raw_data.copy()
@@ -530,15 +587,22 @@ def process_data(csv_file, split=[0.5, 0.2, 0.3]):
     sizes = np.array(split) * len(all_seqs)
 
     train_sz, valid_sz = math.floor(sizes[0]), math.floor(sizes[1])
-    train_dataset = MicrosoftTrainDataset(
-        all_seqs[0:1], min_feature, max_feature
-    )
-    print(all_seqs[0:1])
-    pdb.set_trace()
-    valid_dataset = MicrosoftTrainDataset(
-        all_seqs[train_sz : train_sz + valid_sz], min_feature, max_feature
-    )
-    test_dataset = MicrosoftTestDataset(all_seqs[train_sz + valid_sz :])
+    if model == "ddrsa":
+        train_dataset = MicrosoftTrainDataset(
+            all_seqs[0:20], min_feature, max_feature
+        )
+        valid_dataset = MicrosoftTrainDataset(
+            all_seqs[train_sz : train_sz + valid_sz], min_feature, max_feature
+        )
+    elif model =="wbi":
+        train_dataset = MicrosoftTrainDataset_WBI(
+            all_seqs[0: train_sz], min_feature, max_feature
+        )
+        valid_dataset = MicrosoftTrainDataset_WBI(
+            all_seqs[train_sz : train_sz + valid_sz], min_feature, max_feature
+        )
+    test_dataset = MicrosoftTestDataset(all_seqs[train_sz + valid_sz :], min_feature, max_feature)
+    # test_dataset = MicrosoftTestDataset(all_seqs[0:20], min_feature, max_feature)
 
     return train_dataset, valid_dataset, test_dataset
 
