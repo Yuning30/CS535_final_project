@@ -587,12 +587,17 @@ def process_data(csv_file, split=[0.5, 0.2, 0.3], model="ddrsa"):
     sizes = np.array(split) * len(all_seqs)
 
     train_sz, valid_sz = math.floor(sizes[0]), math.floor(sizes[1])
+    new_seqs = []
+    for i in range(0, len(all_seqs)):
+        if len(all_seqs[i]) <= 64:
+            new_seqs.append(all_seqs[i])
     if model == "ddrsa":
         train_dataset = MicrosoftTrainDataset(
-            all_seqs[0:20], min_feature, max_feature
+            new_seqs[0:114], min_feature, max_feature
         )
         valid_dataset = MicrosoftTrainDataset(
-            all_seqs[train_sz : train_sz + valid_sz], min_feature, max_feature
+            # all_seqs[train_sz : train_sz + valid_sz], min_feature, max_feature
+            new_seqs[114:190], min_feature, max_feature
         )
     elif model =="wbi":
         train_dataset = MicrosoftTrainDataset_WBI(
@@ -601,8 +606,9 @@ def process_data(csv_file, split=[0.5, 0.2, 0.3], model="ddrsa"):
         valid_dataset = MicrosoftTrainDataset_WBI(
             all_seqs[train_sz : train_sz + valid_sz], min_feature, max_feature
         )
-    test_dataset = MicrosoftTestDataset(all_seqs[train_sz + valid_sz :], min_feature, max_feature)
-    # test_dataset = MicrosoftTestDataset(all_seqs[0:20], min_feature, max_feature)
+   #  test_dataset = MicrosoftTestDataset(all_seqs[train_sz + valid_sz :], min_feature, max_feature)
+    test_dataset = MicrosoftTestDataset(new_seqs[190:], min_feature, max_feature)
+   #  pdb.set_trace()
 
     return train_dataset, valid_dataset, test_dataset
 

@@ -1,0 +1,1345 @@
+#### start process the data ####
+> /home/yuning/CS535_final_project/src/dataset.py(613)process_data()
+-> return train_dataset, valid_dataset, test_dataset
+(Pdb) #### finish process the data ####
+#### start loading the model ####
+#### finish loading the model ####
+=== inference for C_alpha = 8
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.67
+ave tte is 13.507462686567164
+=== inference for C_alpha = 28
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.68
+ave tte is 14.911764705882353
+=== inference for C_alpha = 48
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.7
+ave tte is 15.042857142857143
+=== inference for C_alpha = 68
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.72
+ave tte is 16.02777777777778
+=== inference for C_alpha = 88
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.74
+ave tte is 16.95945945945946
+=== inference for C_alpha = 108
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.76
+ave tte is 18.039473684210527
+=== inference for C_alpha = 128
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.76
+ave tte is 19.842105263157894
+=== inference for C_alpha = 148
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.78
+ave tte is 21.03846153846154
+=== inference for C_alpha = 168
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.81
+ave tte is 22.074074074074073
+=== inference for C_alpha = 188
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.82
+ave tte is 25.195121951219512
+=== inference for C_alpha = 208
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.82
+ave tte is 25.74390243902439
+=== inference for C_alpha = 228
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.84
+ave tte is 27.297619047619047
+=== inference for C_alpha = 248
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.85
+ave tte is 27.55294117647059

@@ -35,20 +35,24 @@ def compute_V_j(L_max, j, h_j, C_alpha):
 
     return np.min(arr)
 
-def inference_one_series(L_max, series_with_label, model, C_alpha):
+def inference_one_series(L_max, series_with_label, model, C_alpha, generate_plot_stats=False):
     series, label = series_with_label
     # print(label)
     success = None
     time_to_event = None
-    # pdb.set_trace()
+    pdb.set_trace()
     for j in range(0, L_max):
         features = series[0: j+1]
         h_j = model.compute_h_j(L_max, j, features)
-        # print(h_j)
+
+        ############ 2a stats ###########
+        h_j_list = [x for x in h_j]
+        print(f"j = {j}, h_j = {h_j_list}")
+        ############ 2a stats ###########
         T_j = compute_T_j(L_max, h_j)
         V_j = compute_V_j(L_max, j, h_j, C_alpha)
-        if DEBUG:
-            print(f"T_j: {T_j}, V_j: {V_j}")
+        if DEBUG or generate_plot_stats:
+            print(f"j: {j} T_j: {T_j}, V_j: {V_j}")
         # pdb.set_trace()
         intervene = (T_j <= V_j)
         if label[j] == 0:
@@ -74,18 +78,25 @@ def inference_one_series(L_max, series_with_label, model, C_alpha):
     assert time_to_event is not None
     return success, time_to_event
 
-def inference_test_data(L_max, test_dataset, model, C_alpha):
+def inference_test_data(L_max, test_dataset, model, C_alpha, generate_plot_stats=False):
     success_count = 0
     sum_tte = 0
-    for i in range(0, len(test_dataset)):
-        series_with_label = test_dataset[i]
-        success, tte = inference_one_series(L_max, series_with_label, model, C_alpha)
+    length = len(test_dataset) if not generate_plot_stats else 1
+    # pdb.set_trace()
+    for i in range(0, 1):
+        series_with_label = test_dataset[6]
+        series, label = series_with_label
+        # pdb.set_trace()
+        success, tte = inference_one_series(L_max, series_with_label, model, C_alpha, generate_plot_stats=generate_plot_stats)
         if success:
             success_count += 1
             sum_tte += tte
     
     success_rate = success_count / len(test_dataset)
-    avg_tte = sum_tte / success_count
+    if success_count > 0:
+        avg_tte = sum_tte / success_count
+    else:
+        avg_tte = "n/a"
     print(f"success rate is {success_rate}")
     print(f"ave tte is {avg_tte}")
 

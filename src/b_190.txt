@@ -1,0 +1,2513 @@
+#### start process the data ####
+#### finish process the data ####
+#### start loading the model ####
+#### finish loading the model ####
+=== inference for C_alpha = 8
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.6368421052631579
+ave tte is 14.983471074380166
+=== inference for C_alpha = 28
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.6894736842105263
+ave tte is 16.977099236641223
+=== inference for C_alpha = 48
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.7
+ave tte is 17.150375939849624
+=== inference for C_alpha = 68
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.7105263157894737
+ave tte is 17.822222222222223
+=== inference for C_alpha = 88
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.7315789473684211
+ave tte is 18.194244604316548
+=== inference for C_alpha = 108
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.7473684210526316
+ave tte is 19.58450704225352
+=== inference for C_alpha = 128
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.7526315789473684
+ave tte is 21.132867132867133
+=== inference for C_alpha = 148
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.7684210526315789
+ave tte is 22.301369863013697
+=== inference for C_alpha = 168
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.7789473684210526
+ave tte is 22.91216216216216
+=== inference for C_alpha = 188
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success rate is 0.7894736842105263
+ave tte is 24.3
+=== inference for C_alpha = 208
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.8105263157894737
+ave tte is 25.006493506493506
+=== inference for C_alpha = 228
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.8421052631578947
+ave tte is 25.83125
+=== inference for C_alpha = 248
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+missed the event
+success interveved
+success interveved
+success interveved
+success interveved
+success interveved
+success rate is 0.8526315789473684
+ave tte is 26.308641975308642

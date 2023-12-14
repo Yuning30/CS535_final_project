@@ -177,17 +177,18 @@ class DDRSA(L.LightningModule):
             probs = torch.squeeze(probs, dim=1)
             return probs.numpy()
 
-def train(model, train_loader, valid_loader):
+def train(args, model, train_loader, valid_loader):
     checkpoint_callback = ModelCheckpoint(
-        monitor='val_loss',
+        monitor="val_loss",
         save_top_k=2,
         verbose=True,
-        filename='{epoch}-{val_loss:.4f}'
+        filename="{epoch}-{val_loss:.4f}",
+        dirpath=f"{args.model}_20_less_64_full/"
     )
     trainer = L.Trainer(
         limit_train_batches=100,
         # callbacks=[],
-        callbacks=[checkpoint_callback, EarlyStopping(monitor="val_loss", patience=10)],
+        callbacks=[checkpoint_callback, EarlyStopping(monitor="val_loss", patience=1000)],
         accelerator="cpu",
         log_every_n_steps=1,
         # overfit_batches=1,
@@ -238,7 +239,7 @@ if __name__ == "__main__":
         print("#### finish build the model ####")
 
         print("#### start training ####")
-        train(model, train_loader, valid_loader)
+        train(args, model, train_loader, valid_loader)
         print("#### finish training ####")
     elif args.model == "wbi":
         print("#### start build the model ####")
@@ -246,7 +247,7 @@ if __name__ == "__main__":
         print("#### finish build the model ####")
 
         print("#### start training ####")
-        train(model, train_loader, valid_loader)
+        train(args, model, train_loader, valid_loader)
         print("#### finish training ####")
     else:
         assert False, f"Unrecognized model name {args.model}"
